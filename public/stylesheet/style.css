@@ -44,6 +44,62 @@ img {
   transition: 0.3s ease-in;
   flex: 1 1 100%;
 }
+/* Reset Styles */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar Styles */
+.navigation-bar {
+  background-color: rgba(34, 31, 31, 0.8); /* Change background color and opacity as needed */
+  padding: 10px 0;
+}
+
+
+
+.navigation-bar ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.navigation-bar li {
+  display: inline;
+}
+
+.navigation-bar a {
+  text-decoration: none;
+  color: #fff; /* Change text color as needed */
+  padding: 10px 20px;
+  position: relative;
+}
+
+.navigation-bar a:hover {
+  color: #a96700; /* Change hover color as needed */
+}
+
+/* Active link */
+.navigation-bar .active a {
+  color: #a96700; /* Change active color as needed */
+}
+
+/* Underline effect */
+.navigation-bar a .underline {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background-color: #a96700; /* Change underline color as needed */
+  transform: scaleX(0); /* Initially no width */
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigation-bar a:hover .underline,
+.navigation-bar .active a .underline {
+  transform: scaleX(1); /* Expand width on hover or when active */
+}
+
 @media screen and (min-width: 500px) {
   #main .card {
     flex: 1 1 30%;
@@ -209,4 +265,6 @@ img {
   .menu-pop-up a:hover {
     background-color: #f1f1f1;
   }
+  
+
   

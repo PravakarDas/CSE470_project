@@ -55,9 +55,45 @@ p, .a-CTA, input, header .navigation-bar a, .copyright li, .contact .form form l
 header nav .navigation-bar .underline, header .text .button button:hover, .contact .form form button:hover, .contact .text i:hover {
     background-color: #a96700;
 }
-header .navigation-bar ul li, header .text, .about-us .text, .reservation .text, .menu .box-model, .menu .text, .fixed-image .text, footer, .copyright, .contact .text i {
-    text-align: center;
+/* Style for the navigation bar */
+/* Style for the navigation bar */
+header .navigation-bar {
+    background: #233142; 
 }
+	
+.second-color { 
+	background: #455d7a; 
+}
+
+.third-color { 
+	background: #f95959; 
+}
+
+.fourth-color { 
+	background: #e3e3e3; 
+}; /* Set the background color to your unique color */
+
+
+/* Text color */
+header .navigation-bar a {
+    color: black; /* Set the text color to black */
+}
+
+/* Text alignment styles */
+header .navigation-bar ul li,
+header .text,
+.about-us .text,
+.reservation .text,
+.menu .box-model,
+.menu .text,
+.fixed-image .text,
+footer,
+.copyright,
+.contact .text i {
+    text-align: center; 
+}
+
+
 header nav, header .navigation-bar ul, .about-us, .reservation, .about-us .image-container, .reservation .image-container, .menu, .menu .menu-image-container, footer .contact-container, .copyright ul, .contact {
     display: flex;
 }
@@ -193,7 +229,7 @@ header .text .arrow .left:after, header .text .arrow .right:after, header .text 
     content: 'Loading...';
     font-size: 16px;
     font-family: Arial, serif;
-    color: #fff;
+    color: #4a3c3c;
     text-align: center;
     position: absolute;
     left: 0;

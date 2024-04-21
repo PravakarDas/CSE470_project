@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navigation Bar Styles */
+.navigation-bar {
+  background-color: rgba(34, 31, 31, 0.8); /* Change background color and opacity as needed */
+  padding: 10px 0;
+}
+
+
+
+.navigation-bar ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.navigation-bar li {
+  display: inline;
+}
+
+.navigation-bar a {
+  text-decoration: none;
+  color: #fff; /* Change text color as needed */
+  padding: 10px 20px;
+  position: relative;
+}
+
+.navigation-bar a:hover {
+  color: #a96700; /* Change hover color as needed */
+}
+
+/* Active link */
+.navigation-bar .active a {
+  color: #a96700; /* Change active color as needed */
+}
+
+/* Underline effect */
+.navigation-bar a .underline {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background-color: #a96700; /* Change underline color as needed */
+  transform: scaleX(0); /* Initially no width */
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigation-bar a:hover .underline,
+.navigation-bar .active a .underline {
+  transform: scaleX(1); /* Expand width on hover or when active */
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(253, 101, 133, 1) 0%,
+    rgba(255, 211, 165, 1) 90%
+  );
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  width: 400px;
+  height: 400px;
+  background-color: #ffffff;
+  padding: 10px 30px;
+}
+
+.card_title {
+  text-align: center;
+  padding: 10px;
+}
+
+.card_title h1 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.form input {
+  margin: 10px 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+.form button {
+  background-color: #4796ff;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 15px;
+  width: 100%;
+}
+
+.card_terms {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.card_terms input[type="checkbox"] {
+  background-color: #e2e2e2;
+}
+
+.card_terms span {
+  margin: 5px;
+  font-size: 13px;
+}
+
+.card a {
+  color: #4796ff;
+  text-decoration: none;
+}
