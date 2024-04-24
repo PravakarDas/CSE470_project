@@ -1,10 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Post</title>
+    <link rel="stylesheet" href="stylesheet/signup.css">
+</head>
+<body>
 <div class="container">
-    <link rel="stylesheet" href="stylesheet/logging.css">
     <header>
         <nav>
             <div class="logo">
-                <a href="/"><img src="https://res.cloudinary.com/abdel-rahman-ali/image/upload/v1535988515/logo-rosa-white.png" alt="Rosa Logo"></a>
-                <link rel="stylesheet" href="stylesheet/create blog.css"> 
+                <a href="/"><img src="https://res.cloudinary.com/abdel-rahman-ali/image/upload/v1535988515/logo-rosa-white.png"
+                                 alt="Rosa Logo"></a>
             </div>
             <div class="toggle">
                 <span class="first"></span>
@@ -21,7 +29,6 @@
                     <li><a href="#">Shop<span class="underline"></span></a></li>
                     <li><a href="#">Contact<span class="underline"></span></a></li>
                     <li><a href="/logging">Logging/Signup<span class="underline"></span></a></li>
-                   
                 </ul>
             </div>
         </nav>
@@ -29,12 +36,18 @@
 
     <div class="post-form">
         <h2>Create a New Post</h2>
-        <form action="/Submit_Post" method="POST">
+        <form action="/Submit_Post" method="POST" enctype="multipart/form-data">
             <label for="title">Title:</label><br>
             <input type="text" id="title" name="title" required><br>
-            <h2></h2><label for="content">Content:</label><br></h2>
+            <label for="content">Content:</label><br>
             <textarea id="content" name="content" rows="4" cols="50" required></textarea><br>
-            <button>Submit Post</button>
+            <label for="image">Upload Image:</label><br>
+            <input type="file" id="image" name="image"><br>
+            <button type="submit">Submit Post</button>
         </form>
     </div>
 </div>
+</body>
+</html>
+
+
