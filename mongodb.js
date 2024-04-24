@@ -1,64 +1,64 @@
-const mongoose= require('mongoose')
+const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/loggingsinup')
-
-.then(()=>{
-    console.log("mongodb connected");
-
-})
-
-.catch(()=>{
-    console.log("finding error on Database");
-
-})
+mongoose
+  .connect("mongodb://localhost:27017/loggingsinup")
+  .then(() => {
+    console.log("MongoDB connected");
+  })
+  .catch((error) => {
+    console.log("Error connecting to MongoDB:", error.message);
+  });
 
 const loggingsinupSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {  // Changed from Email to email
-        type:String,
-        require: true
-    },
-    password: {
-        type: String,
-        required: true
-    }
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 
 const postSchema = new mongoose.Schema({
-    title: {
-        type:String,
-        require:true
-    },
-    content: {
-        type:String,
-        require:true
-    }
+  title: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  image: {
+    data: Buffer,
+    contentType: String  // Use capital 'S' for String
+  }
+});
 
-})
+const menuItemSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+});
 
-//........................ post part
+const menuItemModel = mongoose.model("MenuItem", menuItemSchema);
+const collection = mongoose.model("usercollection", loggingsinupSchema);
+const postcreate = mongoose.model("post", postSchema);
 
-const loadblog = async(res, req) => {
-
-    try{
-        const posts = await postSchema.find({});
-        res.render('showpost',{posts:posts});
-
-    } catch(error){ 
-        console.log(error.massage);
-    }
-}
-
-
-
-//.......................
-
-const collection = new mongoose.model("usercolleaction",loggingsinupSchema )
-const postcreate = new mongoose.model('post', postSchema)
-module.exports = collection
-module.exports = postcreate
+module.exports = {
+  collection,
+  postcreate,
+  menuItemModel
+};
 
 
