@@ -1,54 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <link rel="stylesheet" href="stylesheet/signup.css">
-</head>
-<body>
-    <link rel="stylesheet" href="stylesheet/logging.css">
-        <header>
-            <nav>
-                <div class="logo">
-                    <a href="/"><img src="https://res.cloudinary.com/abdel-rahman-ali/image/upload/v1535988515/logo-rosa-white.png" alt="Rosa Logo"></a>
-                    <link rel="stylesheet" href="stylesheet/logging.css"> 
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-lg-12 col-xl-11">
+        <div class="row justify-content-center">
+
+          
+            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign Up</p>
+
+
+                <% if(infoSubmitObj != '') { %>
+                    <div class="col-8 alert alert-success" role="alert">
+                      <%= infoSubmitObj %>
+                    </div>
+                  <% } %>
+                
+                  <% if(infoErrorsObj != '') { %>
+                    <div class="col-8 alert alert-danger" role="alert">
+                      <%= infoErrorsObj[0].message %>
+                    </div>
+                  <% } %>
+                
+               
+            <form class="mx-1 mx-md-4" method="POST" action="/signup">
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">Your Name</label>
+                        <input type="text" id="form3Example1c" class="form-control" name="name" autocomplete="off" />
+
+                    </div>
                 </div>
-                <div class="toggle">
-                    <span class="first"></span>
-                    <span class="middle"></span>
-                    <span class="last"></span>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example3c">Your Email</label>
+                        <input type="email" id="form3Example3c" class="form-control" name="email" autocomplete="off"/>
+
+                    </div>
                 </div>
-                <div class="navigation-bar">
-                    <ul>
-                        <li class="active"><a href="/">Home<span class="underline"></span></a></li>
-                        <li><a href="#">Reservations<span class="underline"></span></a></li>
-                        <li><a href="/Menu">Menu<span class="underline"></span></a></li>
-                        <li><a href="#">Blog<span class="underline"></span></a></li>
-                        <li><a href="#">Features<span class="underline"></span></a></li>
-                        <li><a href="#">Shop<span class="underline"></span></a></li>
-                        <li><a href="#">Contact<span class="underline"></span></a></li>
-                        <a href="/logging">Loging/Signup<span class="underline"></span></a>
-                    </ul>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4c">Password</label>
+                        <input type="password" id="form3Example4c" class="form-control"
+                            name="password" />
+
+                    </div>
                 </div>
-    <div class="container">
-        <div class="card">
-            <div class="card_title">
-                <h1>Create Account</h1>
-                <span>After Create Now logging <a href="/logging">Sign In</a></span>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="description">Short Description of Yourself</label>
+                        <input type="text" id="description" class="form-control" name="description" autocomplete="off" />
+
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                    <label class="form-check-label" for="form2Example3">
+                        Already have an account? <a href="/signin">Login</a>
+                    </label>
+                </div>
+            </form>
+
             </div>
-            <div class="form">
-                <form action="/signup" method="post">
-                    <input type="name" name="name" id="name" placeholder="UserName" />
-                    <input type="email" name="email" placeholder="email" id="email" />
-                    <input type="password" name="password" placeholder="password" id="password" />
-                    <button>Sign Up</button>
-                </form>
-            </div>
-            <div class="card_terms">
-                <input type="checkbox" name="" id="terms"> <span>I have read and agree to the <a href="">Terms of Service</a></span>
+            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
             </div>
         </div>
+
+
     </div>
-</body>
-</html>
+</div>
